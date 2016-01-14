@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int q = in.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++)
+            {
+            arr[i] = in.nextInt();
+        }
+        int rot[] = new int[n];
+        int t=0;
+        if(k>=n)
+              {
+               k=k%n;
+            }
+        int j=0;
+        for(int s=0;s<n;s++){
+            if(s-k<0){
+                rot[s]=arr[s-k+n];
+            }
+            else if(s-k>=0){
+                rot[s]= arr[s-k];
+            }
+        }
+        for(int p=0;p<q;p++)
+            {
+            int temp=in.nextInt();
+            System.out.println(rot[temp]);
+        }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
