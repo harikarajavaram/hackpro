@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++)
+            {
+            long n=in.nextLong();
+            long f=0;
+            f=fib(n);            
+            System.out.println(f);
+        }
+    }
+     
+    public static long fib(long n)
+        {
+        long sum=2;
+        long f1=1,f2=2,f3=0;
+        while((f2+f1)<=n)    
+            {
+            f3=f1+f2;
+            if((f3 % 2)==0)
+                {
+                sum=sum+f3;   
+            }
+            f1=f2;
+            f2=f3;
+        }
+        return sum;
+    }  
+}
