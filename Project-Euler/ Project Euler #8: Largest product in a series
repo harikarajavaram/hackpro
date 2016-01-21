@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int i=0;i<t;i++)
+            {
+            int len = in.nextInt();
+            int k = in.nextInt();
+            String n = in.next();
+            int digits[] = new int[len];
+            for(int m=0;m<len;m++)
+                {
+                digits[m]=Integer.parseInt(String.valueOf(n.charAt(m)));
+            }
+            int max=-1;
+            for(int g=0;g<=(len-k);g++){
+            int ans=1;
+            for(int l=g;l<g+k;l++)
+                {
+                ans=ans*digits[l];
+            }
+             if(ans>max)
+                 max=ans;
+            }
+            System.out.println(max);
+        }
+    }
+}
