@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        int factorials[] = new int[10];
+        factorials[0]=factorials[1]=1;
+        for(int m=2;m<10;m++)
+            {
+            factorials[m]=m*factorials[m-1];
+        }
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        long sum=0;
+        for(int t=10;t<n;t++)
+            {
+            int i=t;
+            long ans=0;
+            int digits[]=new int[7];
+            int j=0;
+            while(i>0)
+                {
+                digits[j]=i%10;
+                ans=ans+factorials[digits[j]];
+                i=i/10;
+                j++;
+            }
+            if((ans%t)==0)
+                sum=sum+t;
+        }
+        System.out.println(sum);
+    }
+}
