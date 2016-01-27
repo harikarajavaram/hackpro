@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int exponent[] = new int[10];
+        exponent[0]=0;
+        exponent[1]=1;
+        for(int i=2;i<10;i++)
+            {
+            exponent[i]=(int)Math.pow(i,n);
+        }
+        int sum=0;
+        for(int j=10;j<=n*((int)Math.pow(9,n));j++)
+            {
+            int temp=j;
+            int digitsum=0;
+            while(temp>0)
+                {
+                int r=0;
+                r=temp%10;
+                digitsum=digitsum+exponent[r];
+                temp=temp/10;
+            }
+            if(digitsum==j)   
+                sum=sum+j;
+        }
+        System.out.println(sum);
+    }
+}
