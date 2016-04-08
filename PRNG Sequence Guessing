@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int i=0;i<t;i++)
+            {
+            long a = in.nextInt();
+            long b = in.nextInt();
+            int arr[] = new int[10];
+            for(int l=0;l<10;l++)
+                {
+                arr[l]=in.nextInt();
+            }
+            for(long j=a;j<=b;j++)
+                {
+                //System.out.println("h");
+                Random ran = new Random(j);
+                int check=0;
+                int gen[] = new int[10];
+                for(int k=0;k<10;k++)
+                    {
+                    gen[k] = ran.nextInt(1000);
+                    if(arr[k]==gen[k])
+                        {
+                        check++;
+                    }
+                }
+                if(check==10)
+                    {
+                    System.out.print(j + " ");
+                    for(int g=0;g<10;g++)
+                        {
+                        int num = ran.nextInt(1000);
+                        System.out.print(num + " ");
+                    }
+                }
+            }
+            System.out.println("");
+        }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
