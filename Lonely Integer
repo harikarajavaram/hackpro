@@ -1,0 +1,61 @@
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <cstdlib>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+/*using namespace std;
+int lonelyinteger(vector < int > a) {
+return 0;
+
+}
+int main() {
+    int res;
+    
+    int _a_size;
+    cin >> _a_size;
+    cin.ignore (std::numeric_limits<std::streamsize>::max(), '\n'); 
+    vector<int> _a;
+    int _a_item;
+    for(int _a_i=0; _a_i<_a_size; _a_i++) {
+        cin >> _a_item;
+        _a.push_back(_a_item);
+    }
+    
+    res = lonelyinteger(_a);
+    cout << res;
+    
+    return 0;
+}*/
+int main()
+    {
+    int n,arr[100],i,j,t,count=0;
+    scanf("%d",&n);
+    for(t=0;t<n;t++)
+        {
+        scanf("%d",&arr[t]);
+        }
+    for(i=0;i<100;i++)
+        {
+        count=0;
+        for(j=0;j<n;j++)
+            {
+            if(i==arr[j])
+                count++;
+            }          
+        if(count!=0 && (count==1 || count%2==1))
+            printf("%d",i);
+        }
+    return 0;
+    }
