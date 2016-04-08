@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        BigInteger a = in.nextBigInteger();
+        BigInteger b = in.nextBigInteger();
+        //long a = in.nextLong();
+        //long b = in.nextLong();
+        int n = in.nextInt();
+        //long c=0;
+        BigInteger c =  new BigInteger("0");
+        for(int i=2;i<n;i++)
+            {
+            BigInteger temp = new BigInteger("1");
+            temp = (b.multiply(b));
+            c = temp.add(a);
+            a = b;
+            b = c;
+        }
+        System.out.println(c);
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
